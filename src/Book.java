@@ -1,30 +1,17 @@
-public class Book {
+public abstract class Book {
     private String title;
     private String author;
-    private boolean isBorrowed;
+    private String isbn;
 
-    public Book(String title, String author, boolean isBorrowed) {
+    public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
-        this.isBorrowed = isBorrowed;
-    }
-    public Book(String title) {
-        this.title = title;
-       
+        this.isbn = isbn;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return this.title; }
+    public String getAuthor() { return this.author; }
+    public String getIsbn() { return this.isbn; }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public boolean  getIsBorrowed() {
-        return isBorrowed;
-    }
-    public void setBorrowed(boolean isBorrowed) {
-        this.isBorrowed = isBorrowed;
-    }
+    public abstract void displayInfo();
 }

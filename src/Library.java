@@ -1,26 +1,29 @@
-import java.util.ArrayList;
-public class Library {
-    private ArrayList<Book> books;
+import java.util.*;
 
-    public Library() {
-        books = new ArrayList<>();
-    }
+public class Library {
+    private List<Book> inventory = new ArrayList<>();
 
     public void addBook(Book book) {
-        books.add(book);
+        inventory.add(book);
     }
 
-    public ArrayList<Book> getBooks() {
-        return books;
+    public Book searchBook(String title) throws BookNotFoundException {
+        for (Book book : inventory) {
+            if (book.getTitle().equalsIgnoreCase(title)) return book;
+        }
+        throw new BookNotFoundException("Book titled '" + title + "' not found.");
     }
-    public Book getBook(Book book) {
-        
-        return book;
+
+    public Book searchBook(String author, String isbn) throws BookNotFoundException {
+        for (Book book : inventory) {
+            if (book.getAuthor().equalsIgnoreCase(author) && book.getIsbn().equals(isbn)) return book;
+        }
+        throw new BookNotFoundException("Book by '" + author + "' with ISBN '" + isbn + "' not found.");
     }
-    public void borrowBook(Book book) {
-        books.remove(book);
+
+    public void showAllBooks() {
+        for (Book book : inventory) {
+            book.displayInfo();
+        }
     }
-   public boolean searchBook(Book book){
-    return books.contains(book);
-   }
 }
