@@ -12,7 +12,7 @@ public class App {
         // Display all books
         library.showAllBooks();
 
-        // Search and borrow
+        
         try {
             System.out.print("Enter book title to borrow: ");
             String title = sc.nextLine();
