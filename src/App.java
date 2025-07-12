@@ -6,8 +6,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         
-        library.addBook(new EBook("Java Basics", "Alice", "111", "http://download.com/java"));
-        library.addBook(new PrintedBook("OOP Concepts", "Bob", "222", 5));
+        library.addBook(new EBook("Java Basics", "Amandika", "111", "http://download.com/java"));
+        library.addBook(new PrintedBook("OOP Concepts", "Hirusha", "222", 5));
 
      
         library.showAllBooks();
