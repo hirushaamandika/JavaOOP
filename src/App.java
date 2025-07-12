@@ -5,11 +5,11 @@ public class App {
         Library library = new Library();
         Scanner sc = new Scanner(System.in);
 
-        // Adding books
+        
         library.addBook(new EBook("Java Basics", "Alice", "111", "http://download.com/java"));
         library.addBook(new PrintedBook("OOP Concepts", "Bob", "222", 5));
 
-        // Display all books
+     
         library.showAllBooks();
 
         
